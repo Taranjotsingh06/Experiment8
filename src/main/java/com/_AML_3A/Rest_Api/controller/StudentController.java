@@ -2,6 +2,7 @@ package com._AML_3A.Rest_Api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,7 +37,7 @@ public class StudentController {
         return service.saveStudent(student);
     }
     
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     public List<Student> deleteStudent(@PathVariable int id){
     	service.deleteStudent(id);
     	return service.getAllStudents();
